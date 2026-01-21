@@ -41,10 +41,10 @@ const Hero = () => {
             <img 
               src={mochiHands}
               alt="Mochi ice cream warna-warni"
-              className="rounded-3xl shadow-card max-w-md w-full animate-float object-cover"
+              className="rounded-3xl shadow-card max-w-md w-full object-cover"
             />
             {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 bg-card px-6 py-3 rounded-2xl shadow-card">
+            <div className="absolute -bottom-4 -left-4 bg-card px-6 py-3 rounded-2xl shadow-card animate-float">
               <div className="flex items-center gap-2">
                 <span className="text-3xl">🍡</span>
                 <div>
