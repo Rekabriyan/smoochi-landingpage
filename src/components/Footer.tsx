@@ -74,7 +74,7 @@ const Footer = () => {
 
         <div className="border-t border-background/20 pt-8 text-center">
           <p className="text-sm opacity-70">
-            © 2026 Smoochi. Dibuat dengan 🍡 di Bandung
+            © 2026 Smoochi. Dibuat dengan ❤️ di Bandung
           </p>
         </div>
       </div>
