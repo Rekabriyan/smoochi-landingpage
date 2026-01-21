@@ -42,7 +42,7 @@ const Footer = () => {
             <h4 className="font-display font-bold mb-4">Kontak</h4>
             <div className="space-y-3 text-sm">
               <a 
-                href="https://instagram.com/smoochi.id" 
+                href="https://www.instagram.com/mochiicecreamsmoochi?igsh=czh1MW9mY21jY21i" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
