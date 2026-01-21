@@ -88,7 +88,7 @@ const Reseller = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <div className="bg-gradient-pink rounded-3xl p-8 md:p-12 max-w-xl mx-auto shadow-pink">
+          <div className="bg-gradient-pink rounded-3xl p-6 md:p-12 max-w-xl mx-auto shadow-pink">
             <h3 className="font-display text-2xl md:text-3xl font-bold text-secondary-foreground mb-4">
               Tertarik Jadi Reseller?
             </h3>

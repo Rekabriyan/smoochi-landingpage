@@ -37,7 +37,7 @@ const OrderPlatforms = () => {
   ];
 
   return (
-    <section id="order" className="py-24 bg-card">
+    <section id="order" className="py-14 bg-card sm:py-24 md:py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">

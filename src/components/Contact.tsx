@@ -2,7 +2,7 @@ import { Instagram, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-card to-smoochi-turquoise-light">
+    <section id="contact" className="py-10 sm:py-2 md:py-2 lg:py-2 bg-gradient-to-b from-card to-smoochi-turquoise-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
