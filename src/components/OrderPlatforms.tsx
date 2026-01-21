@@ -49,10 +49,6 @@ const OrderPlatforms = () => {
           </p>
         </div>
 
-        {/* REVISI UTAMA DI SINI:
-           1. 'grid-cols-2' (tanpa sm/md) -> Memaksa 2 kolom di HP.
-           2. 'gap-3' -> Jarak diperkecil agar muat 2 kolom di layar sempit.
-        */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 max-w-5xl justify-content-center mx-auto">
           {platforms.map((platform, index) => (
             <a
@@ -60,27 +56,20 @@ const OrderPlatforms = () => {
               href={platform.link}
               target="_blank"
               rel="noopener noreferrer"
-              // Padding diperkecil (p-4) di mobile agar tidak sesak
               className="group bg-background rounded-2xl p-4 md:p-6 shadow-card hover:shadow-soft transition-all duration-300 hover:-translate-y-2 text-center"
             >
-              {/* Ukuran box logo disesuaikan utk mobile */}
               <div
                 className={`w-14 h-14 md:w-16 md:h-16 ${platform.color} rounded-2xl mx-auto mb-3 md:mb-4 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}
               >
-                {/* Ukuran gambar logo disesuaikan */}
                 <img
                   src={platform.logo}
                   alt={platform.name}
                   className="w-10 h-10 md:w-14 md:h-14 object-contain"
                 />
               </div>
-
-              {/* Ukuran font nama platform */}
               <h3 className="font-display font-bold text-foreground mb-1 text-sm md:text-base">
                 {platform.name}
               </h3>
-
-              {/* Ukuran font lokasi */}
               <p className="text-xs md:text-sm text-muted-foreground">
                 {platform.location}
               </p>
