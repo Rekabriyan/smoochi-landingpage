@@ -37,7 +37,7 @@ const OrderPlatforms = () => {
   ];
 
   return (
-    <section id="order" className="py-14 bg-card sm:py-24 md:py-16 lg:py-24">
+    <section id="order" className="py-14 bg-card sm:py-12 md:py-10 lg:py-8">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
@@ -49,7 +49,7 @@ const OrderPlatforms = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 max-w-5xl justify-content-center mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-5xl justify-content-center mx-auto">
           {platforms.map((platform, index) => (
             <a
               key={index}

@@ -33,7 +33,7 @@ const Header = () => {
           href="https://wa.me/6281220499249"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-pink text-secondary-foreground px-6 py-2.5 rounded-full font-semibold shadow-pink hover:opacity-90 transition-opacity"
+          className="bg-gradient-pink text-secondary-foreground px-2 py-2.5 sm:px-5 md:px-2 rounded-full font-semibold shadow-pink hover:opacity-90 transition-opacity"
         >
           Pesan Sekarang
         </a>
