@@ -104,8 +104,8 @@ const OrderPlatforms = () => {
               loading="lazy"
               className="w-8 h-8 object-cover"
             />
-            <span className="hidden md:inline">Chat Wa</span>
-            <span className="md:hidden">Chat WA</span>
+            <span className="hidden md:inline">Pesan Sekarang</span>
+            <span className="md:hidden">Pesan Sekarang</span>
           </a>
         </div>
       </div>
