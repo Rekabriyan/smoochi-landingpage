@@ -33,7 +33,7 @@ const Contact = () => {
                   <Instagram className="w-6 h-6 text-secondary-foreground" />
                 </div>
                 <div>
-                  <p className="font-semibold">@smoochi.id</p>
+                  <p className="font-semibold">@mochiicecreamsmoochi</p>
                   <p className="text-sm text-muted-foreground group-hover:text-primary-foreground/80">Follow kami di Instagram</p>
                 </div>
               </a>
