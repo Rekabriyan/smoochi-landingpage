@@ -48,7 +48,7 @@ const Footer = () => {
                 className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
               >
                 <Instagram className="w-4 h-4" />
-                @smoochi.id
+                @mochiicecreamsmoochi
               </a>
               <a 
                 href="https://wa.me/6281220499249"
