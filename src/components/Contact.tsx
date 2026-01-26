@@ -24,7 +24,7 @@ const Contact = () => {
             
             <div className="space-y-6">
               <a 
-                href="https://instagram.com/smoochi.id" 
+                href="https://www.instagram.com/mochiicecreamsmoochi?igsh=czh1MW9mY21jY21i" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-accent rounded-2xl hover:bg-primary hover:text-primary-foreground transition-colors group"
