@@ -27,7 +27,7 @@ const Flavors = () => {
   ];
 
   return (
-    <section id="flavors" className="py-2 sm:py-4 md:py-4 lg:py-4 bg-gradient-to-b from-card to-smoochi-cream">
+    <section id="flavors" className="py-24 sm:py-4 md:py-4 lg:py-24 bg-gradient-to-b from-card to-smoochi-cream">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
