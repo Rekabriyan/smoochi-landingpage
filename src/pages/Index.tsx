@@ -7,20 +7,25 @@ import Reseller from "@/components/Reseller";
 import OrderPlatforms from "@/components/OrderPlatforms";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SEO from "@/lib/helmet";
+import { HOME_META, HOME_JSON_LD } from "@/lib/meta";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <Products />
-      <Flavors />
-      <About />
-      <Reseller />
-      <OrderPlatforms />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <SEO {...HOME_META} structuredData={HOME_JSON_LD} />
+      <div className="min-h-screen">
+        <Header />
+        <Hero />
+        <Products />
+        <Flavors />
+        <About />
+        <Reseller />
+        <OrderPlatforms />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 };
 
