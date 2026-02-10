@@ -7,9 +7,13 @@ import Reseller from "@/components/Reseller";
 import OrderPlatforms from "@/components/OrderPlatforms";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SEO from "@/lib/helmet";
+import { HOME_META } from "@/lib/meta";
 
 const Index = () => {
   return (
+  <>
+    <SEO {...HOME_META} />
     <div className="min-h-screen">
       <Header />
       <Hero />
@@ -21,6 +25,7 @@ const Index = () => {
       <Contact />
       <Footer />
     </div>
+  </>
   );
 };
 
