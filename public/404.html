@@ -5,12 +5,23 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
+        // Single Page Application (SPA) Hack for static hosts
+        // 1. Save the current path, query, and hash to sessionStorage
+        const redirect = {
+            pathname: window.location.pathname,
+            search: window.location.search,
+            hash: window.location.hash,
+        };
+        sessionStorage.setItem('redirect', JSON.stringify(redirect));
+
+        // 2. Redirect to the root (index.html)
         window.location.replace("/");
     </script>
 </head>
 
 <body>
-    Redirecting...
+    <!-- Fallback if JS is disabled (rare) -->
+    <p>Redirecting to <a href="/">Combine.app</a>...</p>
 </body>
 
 </html>
