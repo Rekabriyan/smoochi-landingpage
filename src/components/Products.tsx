@@ -111,6 +111,7 @@ const Products = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             <span className="text-gradient-brand">Produk Kami</span>
           </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">Setiap mochi dibuat dengan cermat untuk menghadirkan keseimbangan sempurna antara kulit mochi yang lembut dan es krim yang creamy.</p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {advantages.map((adv, idx) => (
               <div key={idx} className="flex items-center gap-2 bg-accent px-4 py-2 rounded-full">
