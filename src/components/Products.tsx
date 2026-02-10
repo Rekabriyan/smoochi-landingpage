@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+
+// Import gambar tetap sama
 import product1 from "@/assets/product-1.webp";
 import product2 from "@/assets/product-2.webp";
 import product3 from "@/assets/product-3.webp";
@@ -11,17 +13,55 @@ import product7 from "@/assets/product-7.webp";
 import product8 from "@/assets/product-8.webp";
 import product9 from "@/assets/product-9.webp";
 
+// --- KOMPONEN SKELETON SHIMMER ---
+const ImageSkeleton = () => (
+  <div className="absolute inset-0 bg-gray-200 overflow-hidden">
+    <div className="h-full w-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%]" />
+    {/* Menambahkan Style CSS inline untuk animasi shimmer jika belum ada di tailwind.config */}
+    <style dangerouslySetInnerHTML={{ __html: `
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+    `}} />
+  </div>
+);
+
+// --- KOMPONEN LAZY IMAGE DENGAN SKELETON ---
+const LazyImage = ({ src, alt }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full bg-muted overflow-hidden">
+      {/* Skeleton hanya muncul saat isLoaded false */}
+      {!isLoaded && <ImageSkeleton />}
+      
+      <img
+        src={src}
+        alt={alt || "Produk Mochi"}
+        loading="lazy"
+        onLoad={() => setIsLoaded(true)}
+        className={`
+          w-full h-full object-cover transition-all duration-700 ease-out
+          ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-110"}
+          group-hover:scale-110
+        `}
+      />
+    </div>
+  );
+};
+
 const Products = () => {
   const products = [
-    { image: product1, title: "Koleksi Klasik", price: "Mulai Rp 8.000" },
-    { image: product2, title: "Pilihan Premium", price: "Mulai Rp 12.000" },
-    { image: product3, title: "Paket Hampers", price: "Mulai Rp 75.000" },
-    { image: product4, title: "Paket Hampers", price: "Mulai Rp 75.000" },
-    { image: product5, title: "Paket Hampers", price: "Mulai Rp 75.000" },
-    { image: product6, title: "Paket Hampers", price: "Mulai Rp 75.000" },
-    { image: product7, title: "Paket Hampers", price: "Mulai Rp 75.000" },
-    { image: product8, title: "Paket Hampers", price: "Mulai Rp 75.000" },
-    { image: product9, title: "Paket Hampers", price: "Mulai Rp 75.000" },
+    { image: product1, title: "Mochi Original" },
+    { image: product2, title: "Mochi Matcha" },
+    { image: product3, title: "Mochi Cokelat" },
+    { image: product4, title: "Mochi Strawberry" },
+    { image: product5, title: "Mochi Durian" },
+    { image: product6, title: "Mochi Taro" },
+    { image: product7, title: "Mochi Cheese" },
+    { image: product8, title: "Mochi Oreo" },
+    { image: product9, title: "Mochi Red Velvet" },
   ];
 
   const advantages = [
@@ -31,8 +71,6 @@ const Products = () => {
     "Mudah disajikan & disimpan",
   ];
 
-  // --- EMBLA CAROUSEL SETUP ---
-  // active: false pada breakpoint 768px agar di desktop kembali jadi Grid murni
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,
@@ -46,7 +84,6 @@ const Products = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  // Update state saat slide berubah
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
@@ -54,7 +91,6 @@ const Products = () => {
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
 
-  // Init carousel data
   useEffect(() => {
     if (!emblaApi) return;
     setScrollSnaps(emblaApi.scrollSnapList());
@@ -63,24 +99,18 @@ const Products = () => {
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
 
-  // Navigasi Manual
+  const scrollTo = useCallback((index) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((index) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
 
   return (
     <section id="products" className="py-24 bg-card">
       <div className="container mx-auto px-4">
-        {/* Header Section */}
+        {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             <span className="text-gradient-brand">Produk Kami</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Setiap mochi dibuat dengan cermat untuk menghadirkan keseimbangan
-            sempurna antara kulit mochi yang lembut dan es krim yang creamy.
-          </p>
-
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {advantages.map((adv, idx) => (
               <div key={idx} className="flex items-center gap-2 bg-accent px-4 py-2 rounded-full">
@@ -91,29 +121,18 @@ const Products = () => {
           </div>
         </div>
 
-        {/* --- PRODUCT CAROUSEL / GRID --- */}
+        {/* Carousel / Grid Section */}
         <div className="relative">
-          
-          {/* Viewport Embla (Hanya aktif di Mobile, di Desktop jadi div biasa) */}
           <div ref={emblaRef} className="overflow-hidden md:overflow-visible">
-            
-            {/* Container: Flex di Mobile (Slider), Grid di Desktop */}
             <div className="flex md:grid md:grid-cols-3 md:gap-8 touch-pan-y">
               {products.map((product, index) => (
                 <div
                   key={index}
-                  className="
-                    flex-[0_0_85%] min-w-0 pl-4 first:pl-0 
-                    md:flex-none md:pl-0 md:w-auto
-                  "
+                  className="flex-[0_0_85%] min-w-0 pl-4 first:pl-0 md:flex-none md:pl-0 md:w-auto"
                 >
                   <div className="group h-full bg-background rounded-2xl md:rounded-3xl overflow-hidden shadow-card hover:shadow-soft transition-all duration-300 md:hover:-translate-y-2 flex flex-col">
-                    <div className="aspect-square overflow-hidden relative">
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
+                    <div className="aspect-square overflow-hidden relative bg-gray-100">
+                      <LazyImage src={product.image} alt={product.title} />
                     </div>
                   </div>
                 </div>
@@ -121,39 +140,34 @@ const Products = () => {
             </div>
           </div>
 
-          {/* --- MOBILE CONTROLS (Hanya muncul di Mobile) --- */}
-          <div className="mt-6 md:hidden">
-            {/* Dots Indicator */}
+          {/* Controls Mobile */}
+          <div className="mt-8 md:hidden">
             <div className="flex justify-center gap-2 mb-4">
               {scrollSnaps.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => scrollTo(index)}
-                  className={`
-                    h-2 rounded-full transition-all duration-300 
-                    ${index === selectedIndex ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30"}
-                  `}
-                  aria-label={`Go to slide ${index + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === selectedIndex ? "w-8 bg-primary" : "w-2 bg-gray-300"
+                  }`}
                 />
               ))}
             </div>
-
-            {/* Tombol Navigasi Kiri/Kanan Mobile (Opsional, UX Friendly) */}
             <div className="flex justify-center gap-4">
-                <button 
-                    onClick={scrollPrev} 
-                    disabled={!canScrollPrev}
-                    className="p-3 rounded-full bg-background border shadow-sm disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 transition-all"
-                >
-                    <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button 
-                    onClick={scrollNext} 
-                    disabled={!canScrollNext}
-                    className="p-3 rounded-full bg-background border shadow-sm disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 transition-all"
-                >
-                    <ChevronRight className="w-5 h-5" />
-                </button>
+              <button 
+                onClick={scrollPrev} 
+                disabled={!canScrollPrev} 
+                className="p-3 border rounded-full bg-white shadow-sm disabled:opacity-30"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={scrollNext} 
+                disabled={!canScrollNext} 
+                className="p-3 border rounded-full bg-white shadow-sm disabled:opacity-30"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </div>
           </div>
         </div>
