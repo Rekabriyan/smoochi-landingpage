@@ -1,4 +1,4 @@
-import mochiHands from "@/assets/mochi-hands.png";
+import mochiHands from "@/assets/mochi-hands.webp";
 
 const Hero = () => {
   return (
@@ -40,7 +40,7 @@ const Hero = () => {
           <div className="relative">
             <img 
               src={mochiHands}
-              alt="Mochi ice cream warna-warni"
+              alt="Smoochi Ice Cream Mochi"
               className="rounded-3xl shadow-card max-w-md w-full object-cover"
             />
             {/* Floating badge */}
