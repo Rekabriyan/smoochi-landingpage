@@ -1,27 +1,27 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
-import mochiDisplay from "@/assets/mochi-display.png";
-import mochiSliced from "@/assets/mochi-sliced.png";
-import mochiPackaged from "@/assets/mochi-packaged.png";
-import product1 from "@/assets/product-1.png";
-import product2 from "@/assets/product-2.png";
-import product3 from "@/assets/product-3.png";
-import product4 from "@/assets/product-4.png";
-import product5 from "@/assets/product-5.jpg";
-import product6 from "@/assets/product-6.jpg";
+import product1 from "@/assets/product-1.webp";
+import product2 from "@/assets/product-2.webp";
+import product3 from "@/assets/product-3.webp";
+import product4 from "@/assets/product-4.webp";
+import product5 from "@/assets/product-5.webp";
+import product6 from "@/assets/product-6.webp";
+import product7 from "@/assets/product-7.webp";
+import product8 from "@/assets/product-8.webp";
+import product9 from "@/assets/product-9.webp";
 
 const Products = () => {
   const products = [
-    { image: mochiDisplay, title: "Koleksi Klasik", price: "Mulai Rp 8.000" },
-    { image: mochiSliced, title: "Pilihan Premium", price: "Mulai Rp 12.000" },
-    { image: mochiPackaged, title: "Paket Hampers", price: "Mulai Rp 75.000" },
-    { image: product1, title: "Paket Hampers", price: "Mulai Rp 75.000" },
-    { image: product2, title: "Paket Hampers", price: "Mulai Rp 75.000" },
+    { image: product1, title: "Koleksi Klasik", price: "Mulai Rp 8.000" },
+    { image: product2, title: "Pilihan Premium", price: "Mulai Rp 12.000" },
     { image: product3, title: "Paket Hampers", price: "Mulai Rp 75.000" },
     { image: product4, title: "Paket Hampers", price: "Mulai Rp 75.000" },
     { image: product5, title: "Paket Hampers", price: "Mulai Rp 75.000" },
     { image: product6, title: "Paket Hampers", price: "Mulai Rp 75.000" },
+    { image: product7, title: "Paket Hampers", price: "Mulai Rp 75.000" },
+    { image: product8, title: "Paket Hampers", price: "Mulai Rp 75.000" },
+    { image: product9, title: "Paket Hampers", price: "Mulai Rp 75.000" },
   ];
 
   const advantages = [
