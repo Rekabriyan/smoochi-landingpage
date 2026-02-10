@@ -1,4 +1,4 @@
-import mochiVariety from "@/assets/mochi-variety.png";
+import mochiVariety from "@/assets/mochi-variety.webp";
 
 const About = () => {
   const stats = [
