@@ -39,14 +39,14 @@ export const HOME_JSON_LD = {
     }
   ],
   "sameAs": [
-    "https://www.instagram.com/smoochi_id",
-    "https://www.tiktok.com/@smoochi.id"
+    "https://www.instagram.com/mochiicecreamsmoochi/",
+    "https://www.tiktok.com/@smoochiicecream"
   ]
 };
 
 export const HOME_META = {
-  title: "Smoochi Mochi Ice Cream Bandung",
+  title: "Smoochi - Smooth Ice Cream Mochi Bandung",
   description:
-    "Smoochi Mochi Ice Cream Bandung adalah dessert mochi lembut dengan isian es krim premium. Tersedia untuk reseller & pemesanan online.",
+    "Cari es krim mochi Bandung yang enak dan halal? Smoochi hadir dengan banyak varian rasa dan siap delivery ke seluruh Bandung. Pesan sekarang!",
   keywords: KEYWORDS.join(", "),
 };

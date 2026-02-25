@@ -16,7 +16,11 @@ const About = () => {
             <img 
               src={mochiVariety}
               alt="Berbagai varian Smoochi mochi"
-              className="rounded-3xl shadow-card"
+              loading="lazy" 
+              decoding="async" 
+              className="rounded-3xl shadow-card w-full h-auto object-cover"
+              width="600" 
+              height="400" 
             />
             <div className="absolute -top-6 -right-6 bg-secondary text-secondary-foreground px-6 py-3 rounded-2xl font-display font-bold shadow-pink animate-bounce-soft">
               Handmade! 🎉
@@ -46,7 +50,7 @@ const About = () => {
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="bg-accent rounded-2xl p-4 text-center"
+                  className="bg-accent rounded-2xl p-4 text-center hover:scale-105 transition-transform cursor-default"
                 >
                   <div className="font-display text-2xl font-bold text-primary mb-1">
                     {stat.number}
