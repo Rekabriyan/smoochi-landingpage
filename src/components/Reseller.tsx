@@ -1,4 +1,11 @@
-import { Building2, Hotel, ShoppingBag, Calendar, Truck, CheckCircle } from "lucide-react";
+import {
+  Building2,
+  Hotel,
+  ShoppingBag,
+  Calendar,
+  Truck,
+  CheckCircle,
+} from "lucide-react";
 import whatsappLogo from "@/assets/whatsapp-logo.png";
 
 const Reseller = () => {
@@ -25,7 +32,10 @@ const Reseller = () => {
   ];
 
   return (
-    <section id="reseller" className="py-24 bg-gradient-to-b from-smoochi-cream to-smoochi-turquoise-light">
+    <section
+      id="reseller"
+      className="py-24 bg-gradient-to-b from-smoochi-cream to-smoochi-turquoise-light"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
@@ -34,19 +44,24 @@ const Reseller = () => {
             <span className="text-foreground"> Smoochi</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Supplier Mochi Ice Cream untuk Bisnis Anda. 
-            Bergabunglah bersama kami dan nikmati keuntungan menjadi reseller Smoochi!
+            Supplier mochi ice cream halal dan premium untuk bisnis & UMKM.
+            Smoochi hadir dengan varian lengkap serta peluang reseller dengan
+            margin menarik.
           </p>
         </div>
 
         {/* Benefits Section */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h3 className="font-display text-2xl font-bold text-center mb-8">Keuntungan Reseller</h3>
-          
-          {/* UBAHAN 1: grid-cols-2 (tanpa sm:) dan gap-3 */}
+          <h3 className="font-display text-2xl font-bold text-center mb-8">
+            Keuntungan Reseller
+          </h3>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {benefits.map((benefit, idx) => (
-              <div key={idx} className="bg-card rounded-2xl p-4 md:p-6 shadow-card text-center flex flex-col items-center justify-center h-full">
+              <div
+                key={idx}
+                className="bg-card rounded-2xl p-4 md:p-6 shadow-card text-center flex flex-col items-center justify-center h-full"
+              >
                 <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-primary mb-3" />
                 <p className="font-semibold text-sm md:text-base">{benefit}</p>
               </div>
@@ -56,14 +71,21 @@ const Reseller = () => {
 
         {/* Target Market Section */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h3 className="font-display text-2xl font-bold text-center mb-8">Cocok Untuk</h3>
-          
+          <h3 className="font-display text-2xl font-bold text-center mb-8">
+            Cocok Untuk
+          </h3>
+
           {/* UBAHAN 2: Memastikan tetap 2 kolom, gap disesuaikan */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
             {targetMarkets.map((market, idx) => (
-              <div key={idx} className="bg-card rounded-2xl p-4 md:p-6 shadow-card text-center hover:shadow-soft transition-all hover:-translate-y-1 flex flex-col items-center justify-center">
+              <div
+                key={idx}
+                className="bg-card rounded-2xl p-4 md:p-6 shadow-card text-center hover:shadow-soft transition-all hover:-translate-y-1 flex flex-col items-center justify-center"
+              >
                 <market.icon className="w-10 h-10 md:w-12 md:h-12 text-secondary mb-3" />
-                <p className="font-semibold text-sm md:text-base">{market.label}</p>
+                <p className="font-semibold text-sm md:text-base">
+                  {market.label}
+                </p>
               </div>
             ))}
           </div>
@@ -71,7 +93,9 @@ const Reseller = () => {
 
         {/* Work Scheme */}
         <div className="max-w-2xl mx-auto mb-12">
-          <h3 className="font-display text-2xl font-bold text-center mb-8">Skema Kerja Sama</h3>
+          <h3 className="font-display text-2xl font-bold text-center mb-8">
+            Skema Kerja Sama
+          </h3>
           <div className="bg-card rounded-3xl p-6 md:p-8 shadow-card">
             <ul className="space-y-4">
               {workScheme.map((scheme, idx) => (
@@ -93,9 +117,10 @@ const Reseller = () => {
               Tertarik Jadi Reseller?
             </h3>
             <p className="text-secondary-foreground/90 mb-6">
-              Hubungi kami sekarang untuk informasi lebih lanjut dan harga khusus reseller!
+              Hubungi kami sekarang untuk informasi lebih lanjut dan harga
+              khusus reseller!
             </p>
-            <a 
+            <a
               href="https://wa.me/6281220499249?text=Halo%20Smoochi,%20saya%20tertarik%20menjadi%20reseller"
               target="_blank"
               rel="noopener noreferrer"

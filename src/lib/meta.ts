@@ -47,6 +47,6 @@ export const HOME_JSON_LD = {
 export const HOME_META = {
   title: "Smoochi - Smooth Ice Cream Mochi Bandung",
   description:
-    "Cari es krim mochi Bandung yang enak dan halal? Smoochi hadir dengan banyak varian rasa dan siap delivery ke seluruh Bandung. Pesan sekarang!",
+    "Nikmati es krim mochi Bandung yang lembut dan halal dari Smoochi. Cocok untuk dinikmati sendiri atau jadi peluang usaha reseller frozen food yang menjanjikan. Daftar dan mulai sekarang!",
   keywords: KEYWORDS.join(", "),
 };
